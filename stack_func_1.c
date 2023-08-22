@@ -18,7 +18,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (is_number(glob_val) == 0)
 	{
-		fprintf(stderr, ERR_USAGE, line_number);
+		fprintf(stderr, ERR_PUSH, line_number);
 		free(new);
 		exit(EXIT_FAILURE);
 	}
