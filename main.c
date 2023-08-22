@@ -1,14 +1,13 @@
-#include "main.h"
-
+#include "monty.h"
+int glob_val = 0;
 /**
- * main - Entry point of the Monty interpreter program
- * @argc: Number of command line arguments
- * @argv: Array of command line arguments
- * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure
+ * main - entry point
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 int main(int argc, char *argv[])
 {
-	int line_num = 0;
 	FILE *file = NULL;
 	stack_t *stack = NULL;
 
@@ -29,17 +28,13 @@ int main(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
-/**
- * read_file - Reads the Monty bytecode file and executes the instructions
- * @file: Pointer to the bytecode file
- * @stack: Double pointer to the stack
- */
 void read_file(FILE *file, stack_t **stack)
 {
-	glob_lin = 0;
-	char line[1024];
-	char *opcode, *value;
+	char *opcode;
+	char *value;
 	char *delim = " \n\t\r";
+	char line[1024];
+	unsigned int glob_lin = 0;
 
 	while (fgets(line, 1024, file))
 	{
@@ -57,6 +52,6 @@ void read_file(FILE *file, stack_t **stack)
 			}
 			glob_val = atoi(value);
 		}
-		operationfunc(opcode, glob_lin, &stack);
+		operationfunc(opcode, glob_lin, stack);
 	}
 }

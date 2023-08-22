@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * push - Pushes an element onto the stack
@@ -60,7 +60,7 @@ void pall(stack_t **stack, unsigned int line_number)
  * @stack: Double pointer to the stack.
  * @line_number: Line number in the file where the opcode is found.
  */
-void print|(stack_t **stack, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
