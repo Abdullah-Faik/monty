@@ -27,7 +27,11 @@ int main(int argc, char *argv[])
 	fclose(file);
 	return (EXIT_SUCCESS);
 }
-
+/**
+ * read_file - reads file
+ * @file: file to read
+ * @stack: pointer to stack
+*/
 void read_file(FILE *file, stack_t **stack)
 {
 	char *opcode;

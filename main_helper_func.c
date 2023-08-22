@@ -12,7 +12,7 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack)
 	instruction_t opcodes[] = {
 		{"pall", pall},
 		{"push", push},
-		{"pint",pint},
+		{"pint", pint},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)
