@@ -31,8 +31,8 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack)
 	int i = 0;
 
 	instruction_t opcodes[] = {
-		{"pall", pall},
-		{"push", push},
+		{"push", pall},
+		{"pall", push},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)
