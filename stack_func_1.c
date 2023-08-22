@@ -9,17 +9,11 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 
+	(void)line_number;
 	new = (stack_t *)malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
 		fprintf(stderr, ERR_MALLOC);
-		exit(EXIT_FAILURE);
-	}
-
-	if (is_number(glob_val) == 0)
-	{
-		fprintf(stderr, ERR_PUSH, line_number);
-		free(new);
 		exit(EXIT_FAILURE);
 	}
 
