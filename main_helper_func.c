@@ -37,6 +37,7 @@ char *value)
 		{"pall", pall},
 		{"push", push},
 		{"pint", pint},
+		{"swap", swap},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)

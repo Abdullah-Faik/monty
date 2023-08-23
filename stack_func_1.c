@@ -24,7 +24,8 @@ void push(stack_t **stack, unsigned int line_number, char *value)
 	{
 		new->next = NULL;
 		*stack = new;
-	} else
+	}
+	else
 	{
 		new->next = *stack;
 		(*stack)->prev = new;
@@ -68,4 +69,27 @@ void pint(stack_t **stack, unsigned int line_number, char *value)
 	}
 
 	printf("%d\n", (*stack)->n);
+}
+
+void swap(stack_t **stack, unsigned int line_number, char *value)
+{
+	stack_t *temp;
+
+	(void)value;
+	if (stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, ERR_SWAP, line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*stack)->next;
+	(*stack)->next = temp->next;
+	(*stack)->prev = temp;
+	temp->next = *stack;
+	temp->prev = NULL;
+	if ((*stack)->next != NULL)
+	{
+		(*stack)->next->prev = *stack;
+	}
+	*stack = temp;
 }
