@@ -8,11 +8,11 @@
  */
 void push(stack_t **stack, unsigned int line_number, char *value)
 {
-	stack_t *new;
-
+	stack_t *my_stack;
 	(void)line_number;
-	new = (stack_t *)malloc(sizeof(stack_t));
-	if (new == NULL)
+
+	my_stack = malloc(sizeof(stack_t));
+	if (my_stack == NULL)
 	{
 		fprintf(stderr, ERR_MALLOC);
 		exit(EXIT_FAILURE);
@@ -22,13 +22,16 @@ void push(stack_t **stack, unsigned int line_number, char *value)
 	new->prev = NULL;
 	if (*stack == NULL)
 	{
-		new->next = NULL;
-		*stack = new;
-	} else
+		my_stack->next = NULL;
+		my_stack->prev = NULL;
+		*stack = my_stack;
+	}
+	else
 	{
-		new->next = *stack;
-		(*stack)->prev = new;
-		*stack = new;
+		my_stack->next = *stack;
+		my_stack->prev = NULL;
+		(*stack)->prev = my_stack;
+		*stack = my_stack;
 	}
 }
 
