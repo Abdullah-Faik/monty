@@ -71,6 +71,32 @@ void pint(stack_t **stack, unsigned int line_number, char *value)
 	printf("%d\n", (*stack)->n);
 }
 /**
+ * pop - Removes the top element of the stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number in the file where the opcode is found.
+ * @value: Unused parameter.
+ */
+void pop(stack_t **stack, unsigned int line_number, char *value)
+{
+	(void)value;
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, ERR_POP, line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->next != NULL)
+	{
+		*stack = (*stack)->next;
+		free((*stack)->prev);
+		(*stack)->prev = NULL;
+	}
+	else
+	{
+		free(*stack);
+		*stack = NULL;
+	}
+}
+/**
  * swap - Swaps the top two elements of the stack.
  * @stack: Double pointer to the stack.
  * @line_number: Line number in the file where the opcode is found.
