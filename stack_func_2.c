@@ -16,3 +16,16 @@ void add(stack_t **stack, unsigned int line_number, char *value)
 	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_number, value);
 }
+/**
+ * nop - Does nothing.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number in the file where the opcode is found.
+ * @value: Unused parameter.
+ * Return: Nothing.
+ */
+void nop(stack_t **stack, unsigned int line_number, char *value)
+{
+	(void)stack;
+	(void)line_number;
+	(void)value;
+}
