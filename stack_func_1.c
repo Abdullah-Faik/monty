@@ -70,7 +70,12 @@ void pint(stack_t **stack, unsigned int line_number, char *value)
 
 	printf("%d\n", (*stack)->n);
 }
-
+/**
+ * swap - Swaps the top two elements of the stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number in the file where the opcode is found.
+ * @value: Unused parameter.
+ */
 void swap(stack_t **stack, unsigned int line_number, char *value)
 {
 	stack_t *temp;
@@ -91,4 +96,17 @@ void swap(stack_t **stack, unsigned int line_number, char *value)
 		(*stack)->next->prev = *stack;
 	}
 	*stack = temp;
+}
+/**
+ * nop - Does nothing.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number in the file where the opcode is found.
+ * @value: Unused parameter.
+ * Return: Nothing.
+ */
+void nop(stack_t **stack, unsigned int line_number, char *value)
+{
+	(void)stack;
+	(void)line_number;
+	(void)value;
 }

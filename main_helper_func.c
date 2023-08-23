@@ -29,7 +29,7 @@ int is_number(char *str)
  * @value: Value associated with the opcode (if applicable)
  */
 void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
-char *value)
+				   char *value)
 {
 	int i = 0;
 
@@ -38,6 +38,7 @@ char *value)
 		{"push", push},
 		{"pint", pint},
 		{"swap", swap},
+		{"nop", nop},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)

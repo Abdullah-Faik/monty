@@ -61,4 +61,5 @@ void push(stack_t **stack, unsigned int line_number, char *value);
 void pint(stack_t **stack, unsigned int line_number, char *value);
 
 void swap(stack_t **stack, unsigned int line_number, char *value);
+void nop(stack_t **stack, unsigned int line_number, char *value);
 #endif
