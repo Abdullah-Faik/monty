@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	read_file(file, &stack);
 
 	fclose(file);
+	free_stack(stack);
 	return (EXIT_SUCCESS);
 }
 
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
  * read_file - reads file
  * @file: file to read
  * @stack: pointer to stack
-*/
+ */
 void read_file(FILE *file, stack_t **stack)
 {
 	char *opcode;

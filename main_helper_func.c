@@ -51,3 +51,21 @@ char *value)
 	fprintf(stderr, ERR_INST, line_number, opcode);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * free_stack - frees a stack_t stack
+ * @stack: stack to free
+ */
+void free_stack(stack_t *stack)
+{
+	stack_t *temp;
+
+	if (stack == NULL)
+		return;
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+}

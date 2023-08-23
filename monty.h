@@ -52,6 +52,7 @@ void read_file(FILE *file, stack_t **stack);
 /* helper_func.c */
 void operationfunc(char *opcode, unsigned int line_number, stack_t **stack, char *value);
 int is_number(char *str);
+void free_stack(stack_t *stack);
 
 /* stack_func_1*/
 void pall(stack_t **stack, unsigned int line_number, char *value);
