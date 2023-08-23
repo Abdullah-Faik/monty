@@ -76,12 +76,12 @@ void swap(stack_t **stack, unsigned int line_number, char *value)
 	stack_t *temp;
 
 	(void)value;
-	if (stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, ERR_SWAP, line_number);
 		exit(EXIT_FAILURE);
 	}
-
+	printf("here");
 	temp = (*stack)->next;
 	(*stack)->next = temp->next;
 	(*stack)->prev = temp;
