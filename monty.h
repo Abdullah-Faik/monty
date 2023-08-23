@@ -47,6 +47,7 @@ typedef struct instruction_s
 #define ERR_ADD "L%d: can't add, stack too short\n"
 #define ERR_INST "L%d: unknown instruction %s\n"
 #define ERR_SWAP "L%d: can't swap, stack too short\n"
+#define ERR_POP "L%d: can't pop an empty stack\n"
 
 /* main.c */
 int main(int argc, char *argv[]);

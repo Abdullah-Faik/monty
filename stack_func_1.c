@@ -97,16 +97,3 @@ void swap(stack_t **stack, unsigned int line_number, char *value)
 	}
 	*stack = temp;
 }
-/**
- * nop - Does nothing.
- * @stack: Double pointer to the stack.
- * @line_number: Line number in the file where the opcode is found.
- * @value: Unused parameter.
- * Return: Nothing.
- */
-void nop(stack_t **stack, unsigned int line_number, char *value)
-{
-	(void)stack;
-	(void)line_number;
-	(void)value;
-}
