@@ -34,9 +34,10 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
 	int i = 0;
 
 	instruction_t opcodes[] = {
-		{"pall", pall},
 		{"push", push},
+		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{"swap", swap},
 		{"nop", nop},
 		{NULL, NULL}};
