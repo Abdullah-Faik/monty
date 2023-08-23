@@ -1,5 +1,5 @@
 #include "monty.h"
-int glob_val = 0;
+
 /**
  * main - entry point
  * @argc: number of arguments
@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	fclose(file);
 	return (EXIT_SUCCESS);
 }
+
 /**
  * read_file - reads file
  * @file: file to read
@@ -54,8 +55,7 @@ void read_file(FILE *file, stack_t **stack)
 				fprintf(stderr, ERR_PUSH, glob_lin);
 				exit(EXIT_FAILURE);
 			}
-			glob_val = atoi(value);
 		}
-		operationfunc(opcode, glob_lin, stack);
+		operationfunc(opcode, glob_lin, stack, value);
 	}
 }

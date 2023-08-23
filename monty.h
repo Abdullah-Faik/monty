@@ -34,7 +34,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number, char *value);
 } instruction_t;
 
 /* error messsages*/
@@ -45,20 +45,17 @@ typedef struct instruction_s
 #define ERR_PINT "L%d: can't pint, stack empty\n"
 #define ERR_INST "L%d: unknown instruction %s\n"
 
-/* global variable*/
-extern int glob_val;
-
 /* main.c */
 int main(int argc, char *argv[]);
 void read_file(FILE *file, stack_t **stack);
 
 /* helper_func.c */
-void operationfunc(char *opcode, unsigned int line_number, stack_t **stack);
+void operationfunc(char *opcode, unsigned int line_number, stack_t **stack, char *value);
 int is_number(char *str);
 
 /* stack_func_1*/
-void pall(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number, char *value);
+void push(stack_t **stack, unsigned int line_number, char *value);
+void pint(stack_t **stack, unsigned int line_number, char *value);
 
 #endif
