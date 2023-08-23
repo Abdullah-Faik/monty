@@ -1,6 +1,24 @@
 #include "monty.h"
 
 /**
+ * free_stack - frees a stack_t stack
+ * @stack: stack to free
+ */
+void free_stack(stack_t *stack)
+{
+	stack_t *temp;
+
+	if (stack == NULL)
+		return;
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+}
+
+/**
  * is_number - checks if string is a number
  * @str: string to check
  * Return: 1 if true, 0 if false
@@ -53,22 +71,4 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
 	}
 	fprintf(stderr, ERR_INST, line_number, opcode);
 	exit(EXIT_FAILURE);
-}
-
-/**
- * free_stack - frees a stack_t stack
- * @stack: stack to free
- */
-void free_stack(stack_t *stack)
-{
-	stack_t *temp;
-
-	if (stack == NULL)
-		return;
-	while (stack != NULL)
-	{
-		temp = stack;
-		stack = stack->next;
-		free(temp);
-	}
 }
