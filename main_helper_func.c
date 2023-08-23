@@ -56,6 +56,7 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"add", add},
 		{"swap", swap},
 		{"nop", nop},
 		{NULL, NULL}};

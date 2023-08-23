@@ -44,6 +44,7 @@ typedef struct instruction_s
 #define ERR_PUSH "L%d: usage: push integer\n"
 #define ERR_PINT "L%d: can't pint, stack empty\n"
 #define ERR_POP "L%d: can't pop an empty stack\n"
+#define ERR_ADD "L%d: can't add, stack too short\n"
 #define ERR_INST "L%d: unknown instruction %s\n"
 #define ERR_SWAP "L%d: can't swap, stack too short\n"
 
@@ -61,6 +62,7 @@ void push(stack_t **stack, unsigned int line_number, char *value);
 void pall(stack_t **stack, unsigned int line_number, char *value);
 void pint(stack_t **stack, unsigned int line_number, char *value);
 void pop(stack_t **stack, unsigned int line_number, char *value);
+void add(stack_t **stack, unsigned int line_number, char *value);
 void swap(stack_t **stack, unsigned int line_number, char *value);
 void nop(stack_t **stack, unsigned int line_number, char *value);
 #endif
