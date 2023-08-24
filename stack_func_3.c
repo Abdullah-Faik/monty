@@ -35,7 +35,7 @@ void pchar(stack_t **stack, unsigned int line_number, char *value)
 {
 	(void)value;
 
-	if (stack == NULL || *stack == NULL)
+	if (*stack == NULL)
 	{
 		fprintf(stderr, ERR_PCHAR2, line_number);
 		exit(EXIT_FAILURE);
