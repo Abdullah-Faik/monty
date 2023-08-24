@@ -51,7 +51,9 @@ void read_file(FILE *file, stack_t **stack)
 		if (strcmp(opcode, "push") == 0)
 		{
 			value = strtok(NULL, delim);
-			if (value == NULL || is_number(value) == 0)
+
+			if (value == NULL || is_number(value) == 0 || value[0] == '#'
+			|| *value == '#')
 			{
 				fprintf(stderr, ERR_PUSH, glob_lin);
 				exit(EXIT_FAILURE);
