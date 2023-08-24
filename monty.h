@@ -52,6 +52,7 @@ typedef struct instruction_s
 #define ERR_DIV "L%d: can't div, stack too short\n"
 #define ERR_DIV_2 "L%d: division by zero\n"
 #define ERR_MUL "L%d: can't mul, stack too short\n"
+#define ERR_MOD "L%d: can't mod, stack too short\n"
 
 /* main.c */
 int main(int argc, char *argv[]);
@@ -75,5 +76,8 @@ void nop(stack_t **stack, unsigned int line_number, char *value);
 void sub(stack_t **stack, unsigned int line_number, char *value);
 void div_i(stack_t **stack, unsigned int line_number, char *value);
 void mul(stack_t **stack, unsigned int line_number, char *value);
+
+/* stack_func_3 */
+void mod(stack_t **stack, unsigned int line_number, char *value);
 
 #endif

@@ -62,6 +62,7 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
 		{"sub", sub},
 		{"div", div_i},
 		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)
