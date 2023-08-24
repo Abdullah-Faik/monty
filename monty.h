@@ -48,6 +48,7 @@ typedef struct instruction_s
 #define ERR_INST "L%d: unknown instruction %s\n"
 #define ERR_SWAP "L%d: can't swap, stack too short\n"
 #define ERR_POP "L%d: can't pop an empty stack\n"
+#define ERR_SUB "L%d: can't sub, stack too short\n"
 
 /* main.c */
 int main(int argc, char *argv[]);
@@ -66,4 +67,7 @@ void pop(stack_t **stack, unsigned int line_number, char *value);
 void add(stack_t **stack, unsigned int line_number, char *value);
 void swap(stack_t **stack, unsigned int line_number, char *value);
 void nop(stack_t **stack, unsigned int line_number, char *value);
+
+/* stack advanced tasks*/
+void sub(stack_t **stack, unsigned int line_number, char *value);
 #endif

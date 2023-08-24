@@ -59,6 +59,7 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
 		{"add", add},
 		{"swap", swap},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)
