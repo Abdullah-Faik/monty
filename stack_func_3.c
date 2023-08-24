@@ -24,3 +24,29 @@ void mod(stack_t **stack, unsigned int line_number, char *value)
 	(*stack)->next->n %= (*stack)->n;
 	pop(stack, line_number, value);
 }
+
+/**
+ * pchar - Prints the char at the top of the stack, followed by a new line.
+ * @stack: Double pointer to the stack
+ * @line_number: Line number in the file
+ * @value: Unused parameter
+ */
+void pchar(stack_t **stack, unsigned int line_number, char *value)
+{
+	(void)value;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, ERR_PCHAR2, line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*stack)->n < 0 || (*stack)->n > 127)
+	{
+		fprintf(stderr, ERR_PCHAR, line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	_putchar((*stack)->n);
+	_putchar('\n');
+}

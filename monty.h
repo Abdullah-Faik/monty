@@ -53,12 +53,15 @@ typedef struct instruction_s
 #define ERR_DIV_2 "L%d: division by zero\n"
 #define ERR_MUL "L%d: can't mul, stack too short\n"
 #define ERR_MOD "L%d: can't mod, stack too short\n"
+#define ERR_PCHAR "L%d: can't pchar, value out of range\n"
+#define ERR_PCHAR2 "L%d: can't pchar, stack empty\n"
 
 /* main.c */
 int main(int argc, char *argv[]);
 void read_file(FILE *file, stack_t **stack);
 
 /* main_helper_func.c */
+int _putchar(char c);
 void operationfunc(char *opcode, unsigned int line_number, stack_t **stack, char *value);
 int is_number(char *str);
 void free_stack(stack_t *stack);
@@ -79,5 +82,6 @@ void mul(stack_t **stack, unsigned int line_number, char *value);
 
 /* stack_func_3 */
 void mod(stack_t **stack, unsigned int line_number, char *value);
+void pchar(stack_t **stack, unsigned int line_number, char *value);
 
 #endif
