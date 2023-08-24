@@ -60,11 +60,13 @@ void div_i(stack_t **stack, unsigned int line_number, char *value)
 		fprintf(stderr, ERR_DIV, line_number);
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->next->n == 0)
+	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, ERR_DIV_2, line_number);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n /= (*stack)->n;
+	
+	(*stack)->next->n = (*stack)->next->n / (*stack)->n;
 	pop(stack, line_number, value);
+
 }
