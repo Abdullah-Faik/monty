@@ -38,12 +38,33 @@ void nop(stack_t **stack, unsigned int line_number, char *value)
  */
 void sub(stack_t **stack, unsigned int line_number, char *value)
 {
-	if (stack == NULL ||*stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, ERR_SUB, line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	(*stack)->next->n -= (*stack)->n;
+	pop(stack, line_number, value);
+}
+/**
+ * div - Divides the second top element of the stack by the top element
+ * @stack: Double pointer to the stack
+ * @line_number: Line number in the file
+ * @value: Unused parameter
+ */
+void div_i(stack_t **stack, unsigned int line_number, char *value)
+{
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, ERR_DIV, line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->next->n == 0)
+	{
+		fprintf(stderr, ERR_DIV_2, line_number);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n /= (*stack)->n;
 	pop(stack, line_number, value);
 }
