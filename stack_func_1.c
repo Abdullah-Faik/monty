@@ -69,6 +69,7 @@ void pint(stack_t **stack, unsigned int line_number, char *value)
 
 	printf("%d\n", (*stack)->n);
 }
+
 /**
  * pop - Removes the top element of the stack.
  * @stack: Double pointer to the stack.
@@ -95,6 +96,7 @@ void pop(stack_t **stack, unsigned int line_number, char *value)
 		*stack = NULL;
 	}
 }
+
 /**
  * swap - Swaps the top two elements of the stack.
  * @stack: Double pointer to the stack.

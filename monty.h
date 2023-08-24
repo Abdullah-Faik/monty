@@ -51,26 +51,29 @@ typedef struct instruction_s
 #define ERR_SUB "L%d: can't sub, stack too short\n"
 #define ERR_DIV "L%d: can't div, stack too short\n"
 #define ERR_DIV_2 "L%d: division by zero\n"
+#define ERR_MUL "L%d: can't mul, stack too short\n"
 
 /* main.c */
 int main(int argc, char *argv[]);
 void read_file(FILE *file, stack_t **stack);
 
-/* helper_func.c */
+/* main_helper_func.c */
 void operationfunc(char *opcode, unsigned int line_number, stack_t **stack, char *value);
 int is_number(char *str);
 void free_stack(stack_t *stack);
 
-/* stack_func_1*/
+/* stack_func_1 */
 void push(stack_t **stack, unsigned int line_number, char *value);
 void pall(stack_t **stack, unsigned int line_number, char *value);
 void pint(stack_t **stack, unsigned int line_number, char *value);
 void pop(stack_t **stack, unsigned int line_number, char *value);
-void add(stack_t **stack, unsigned int line_number, char *value);
 void swap(stack_t **stack, unsigned int line_number, char *value);
-void nop(stack_t **stack, unsigned int line_number, char *value);
 
-/* stack advanced tasks*/
+/* stack_func_2 */
+void add(stack_t **stack, unsigned int line_number, char *value);
+void nop(stack_t **stack, unsigned int line_number, char *value);
 void sub(stack_t **stack, unsigned int line_number, char *value);
 void div_i(stack_t **stack, unsigned int line_number, char *value);
+void mul(stack_t **stack, unsigned int line_number, char *value);
+
 #endif

@@ -56,11 +56,12 @@ void operationfunc(char *opcode, unsigned int line_number, stack_t **stack,
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
-		{"add", add},
 		{"swap", swap},
+		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
 		{"div", div_i},
+		{"mul", mul},
 		{NULL, NULL}};
 
 	while (opcodes[i].opcode != NULL)
