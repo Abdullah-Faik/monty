@@ -83,5 +83,5 @@ void mul(stack_t **stack, unsigned int line_number, char *value);
 /* stack_func_3 */
 void mod(stack_t **stack, unsigned int line_number, char *value);
 void pchar(stack_t **stack, unsigned int line_number, char *value);
-
+void pstr(stack_t **stack, unsigned int line_number, char *value);
 #endif

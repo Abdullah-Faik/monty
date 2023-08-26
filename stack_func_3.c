@@ -35,18 +35,39 @@ void pchar(stack_t **stack, unsigned int line_number, char *value)
 {
 	(void)value;
 
-	if (*stack == NULL)
+	if (stack == NULL ||*stack == NULL)
 	{
 		fprintf(stderr, ERR_PCHAR2, line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	if ((*stack)->n < 0 || (*stack)->n > 127)
+	if ((*stack)->n < 33 || (*stack)->n > 126)
 	{
 		fprintf(stderr, ERR_PCHAR, line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	_putchar((*stack)->n);
+	_putchar('\n');
+}
+void pstr(stack_t **stack, unsigned int line_number, char *value)
+{
+	stack_t *temp = *stack;
+	(void)value;
+	(void)line_number;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		_putchar('\n');
+		return;
+	}
+
+	while (temp != NULL)
+	{
+		if (temp->n < 33 || temp->n > 126)
+			break;
+		_putchar(temp->n);
+		temp = temp->next;
+	}
 	_putchar('\n');
 }
