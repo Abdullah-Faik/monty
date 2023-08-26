@@ -54,7 +54,7 @@ void pchar(stack_t **stack, unsigned int line_number, char *value)
  * @stack: Double pointer to the stack
  * @line_number: Line number in the file
  * @value: Unused parameter
-*/
+ */
 void pstr(stack_t **stack, unsigned int line_number, char *value)
 {
 	stack_t *temp = *stack;
@@ -63,7 +63,7 @@ void pstr(stack_t **stack, unsigned int line_number, char *value)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		_putchar('\n');
+		printf("\n");
 		return;
 	}
 
@@ -75,4 +75,54 @@ void pstr(stack_t **stack, unsigned int line_number, char *value)
 		temp = temp->next;
 	}
 	printf("\n");
+}
+
+/**
+ * rotl - Rotates the stack to the top.
+ * @stack: Double pointer to the stack
+ * @line_number: Line number in the file
+ * @value: Unused parameter
+ */
+void rotl(stack_t **stack, unsigned int line_number, char *value)
+{
+	stack_t *temp = *stack;
+	(void)value;
+	(void)line_number;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return;
+
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = *stack;
+	(*stack)->prev = temp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
+}
+
+/**
+ * rotr - Rotates the stack to the bottom.
+ * @stack: Double pointer to the stack
+ * @line_number: Line number in the file
+ * @value: Unused parameter
+ */
+void rotr(stack_t **stack, unsigned int line_number, char *value)
+{
+	stack_t *temp = *stack;
+	(void)value;
+	(void)line_number;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return;
+
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = *stack;
+	(*stack)->prev = temp;
+	*stack = temp;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
 }
